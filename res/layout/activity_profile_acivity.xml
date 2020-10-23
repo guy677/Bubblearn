@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:outlineProvider="background"
+    tools:context=".ProfileActivity">
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="513dp"
+        android:layout_height="638dp"
+        android:src="@mipmap/background"
+        app:layout_constraintBottom_toTopOf="@+id/conatraint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/conatraint"
+        android:layout_width="392dp"
+        android:layout_height="371dp"
+        android:background="#ffffff"
+        android:foregroundGravity="top"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.956">
+
+        <EditText
+            android:id="@+id/editTextUserName"
+            android:layout_width="162dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:ems="10"
+            android:hint="@string/userName"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/num"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.368"
+            app:layout_constraintStart_toEndOf="@+id/txtViewUserName"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.866" />
+
+        <Switch
+            android:id="@+id/music_switch"
+            android:layout_width="74dp"
+            android:layout_height="24dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toTopOf="@id/btnSubmit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.55"
+            app:layout_constraintStart_toEndOf="@+id/txt_music"
+            app:layout_constraintTop_toBottomOf="@+id/SecondsRDIO"
+            app:layout_constraintVertical_bias="0.115" />
+
+        <TextView
+            android:id="@+id/txt_music"
+            android:layout_width="86dp"
+            android:layout_height="29dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="serif"
+            android:text="@string/Music"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/btnSubmit"
+            app:layout_constraintEnd_toStartOf="@id/music_switch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtSecondView" />
+
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="saveData"
+            android:text="@string/btnUpdateSetting"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.854" />
+
+        <TextView
+            android:id="@+id/txt_numOfQuestions"
+            android:layout_width="134dp"
+            android:layout_height="34dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="serif"
+            android:text="@string/NumberOfQuestions"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/txtSecondView"
+            app:layout_constraintEnd_toStartOf="@id/num"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtViewUserName"
+            app:layout_constraintVertical_bias="0.373" />
+
+        <TextView
+            android:id="@+id/txtViewUserName"
+            style="@style/Base.Widget.MaterialComponents.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="15dp"
+            android:text="@string/userName"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/txt_numOfQuestions"
+            app:layout_constraintEnd_toStartOf="@id/editTextUserName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.778" />
+
+        <TextView
+            android:id="@+id/txtSecondView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/Seconds"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/txt_music"
+            app:layout_constraintEnd_toStartOf="@+id/SecondsRDIO"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_numOfQuestions"
+            app:layout_constraintVertical_bias="0.194" />
+
+        <EditText
+            android:id="@+id/num"
+            android:layout_width="97dp"
+            android:layout_height="39dp"
+            android:layout_marginBottom="20dp"
+            android:ems="10"
+            android:inputType="number"
+            app:layout_constraintBottom_toTopOf="@+id/SecondsRDIO"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.384"
+            app:layout_constraintStart_toEndOf="@+id/txt_numOfQuestions"
+            app:layout_constraintTop_toBottomOf="@id/editTextUserName"
+            app:layout_constraintVertical_bias="0.784" />
+
+        <RadioGroup
+            android:id="@+id/SecondsRDIO"
+            android:layout_width="200dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/music_switch"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtSecondView"
+            app:layout_constraintTop_toBottomOf="@+id/num">
+
+            <RadioButton
+                android:id="@+id/rdio15SC"
+                android:layout_width="97dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:checked="false"
+                android:text="@string/seconds15"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/rdio30SC"
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.13"
+                android:checked="false"
+                android:text="@string/seconds30"
+                android:textSize="12sp" />
+
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

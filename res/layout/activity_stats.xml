@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tableMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0B3148">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:layout_marginTop="10dp"
+        android:foregroundGravity="center_horizontal"
+        android:onClick="changeChart"
+        android:visibility="visible"
+        app:srcCompat="@drawable/pagefliper1" />
+
+    <FrameLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="468dp"
+        android:background="#0B3148"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardLine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="15dp"
+            android:background="#ffffff"
+            android:visibility="visible">
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardPie"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="15dp"
+            android:background="#ffffff">
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pieChart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/lineChart"
+                android:layout_marginTop="102dp">
+
+
+            </com.github.mikephil.charting.charts.PieChart>
+
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="121dp"
+                android:layout_height="56dp"
+                android:layout_below="@+id/lineChart"
+                android:layout_marginTop="43dp"
+                android:layout_marginBottom="47dp"
+                android:layoutDirection="rtl"
+                android:text="@string/btn_value_correct" />
+
+        </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
+
+    <com.nightonke.boommenu.BoomMenuButton
+        android:id="@+id/bmb"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:alpha="1"
+        app:bmb_buttonEnum="ham"
+        app:bmb_buttonPlaceEnum="buttonPlace_ham_4"
+        app:bmb_normalColor="@color/colorPrimaryDark"
+        app:bmb_piecePlaceEnum="piecePlace_ham_4"
+        app:bmb_shadowColor="#00ffffff" />
+
+</TableLayout>
